@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuva Bharat: Ignite Internship</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Vibrant Orange and Deep Teal -->
+    <!-- Application Structure Plan: A single-page, vertical scrolling narrative. The structure guides the user logically from a high-level introduction (Mission), to the core methodology (What is Abhyasika?), and finally to the detailed user experience (The Internship Journey). This flow is more intuitive and engaging for a potential intern than a static slideshow, allowing for self-paced exploration. Key interactions include a clickable timeline to dynamically display details for each internship stage. -->
+    <!-- Visualization & Content Choices: Report Info: Abhyasika 5 steps -> Goal: Organize -> Viz: Numbered cards (HTML/CSS) -> Interaction: Hover highlight -> Justification: Clearly presents a multi-step process in a digestible, scannable format. Report Info: Internship Stages & Durations -> Goal: Show Process/Change -> Viz: Interactive Vertical Timeline (HTML/CSS/JS) -> Interaction: Click to update content pane -> Justification: Transforms a static list into an engaging, exploratory experience, allowing users to focus on one stage at a time. This is superior to multiple static slides. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FEFCF3; /* A very light, warm off-white */
+        }
+        .bg-dominant { background-color: #F17C2F; }
+        .bg-accent { background-color: #0e839b; }
+        .text-dominant { color: #F17C2F; }
+        .text-accent { color: #0e839b; }
+        .border-dominant { border-color: #F17C2F; }
+        .font-black { font-weight: 900; }
+        .timeline-item.active {
+            background-color: #F17C2F;
+            color: white;
+        }
+        .timeline-item.active h3 {
+            color: white;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-accent">YUVA BHARAT</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#mission" class="text-gray-600 hover:text-dominant transition-colors">Mission</a>
+                <a href="#abhyasika" class="text-gray-600 hover:text-dominant transition-colors">Abhyasika</a>
+                <a href="#journey" class="text-gray-600 hover:text-dominant transition-colors">Internship Journey</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="bg-dominant text-white">
+            <div class="container mx-auto px-6 py-24 md:py-32 text-center">
+                <div class="mb-6">
+                    <!-- Placeholder for Logo -->
+                    <div class="w-24 h-24 bg-accent rounded-2xl mx-auto flex items-center justify-center shadow-lg">
+                        <span class="text-4xl font-bold">YB</span>
+                    </div>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black uppercase">Ignite Internship</h1>
+                <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-white/90">A hands-on program designed to build future leaders through impactful community engagement.</p>
+            </div>
+        </section>
+
+        <!-- Mission & Overview Section -->
+        <section id="mission" class="py-20 md:py-28">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-accent mb-6">Our Core Purpose</h2>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 text-left">
+                    <div class="bg-white p-8 rounded-lg shadow-md border-l-4 border-dominant">
+                        <h3 class="text-2xl font-bold text-dominant mb-3">Mission</h3>
+                        <p class="leading-relaxed">YUVA BHARAT focuses on uplifting youth through various social programs. By engaging young individuals in community projects, it aims to create a more participative and informed society.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md border-l-4 border-accent">
+                        <h3 class="text-2xl font-bold text-accent mb-3">Overview</h3>
+                        <p class="leading-relaxed">We are committed to empowering the youth of Mumbai through social and educational initiatives, fostering their potential and impactful engagement in society.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Abhyasika Section -->
+        <section id="abhyasika" class="py-20 md:py-28 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-accent">What is Abhyasika?</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Our flagship initiative is a systematic, five-step process designed to provide foundational support where it's needed most.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center hover:scale-105 hover:shadow-xl transition-transform duration-300">
+                        <div class="bg-dominant text-white text-3xl font-bold w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">1</div>
+                        <h3 class="text-xl font-bold text-accent">Identifying Vasti</h3>
+                        <p class="mt-2 text-gray-600">Locating communities in need of educational intervention.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center hover:scale-105 hover:shadow-xl transition-transform duration-300">
+                        <div class="bg-dominant text-white text-3xl font-bold w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">2</div>
+                        <h3 class="text-xl font-bold text-accent">Survey</h3>
+                        <p class="mt-2 text-gray-600">Conducting surveys to understand specific educational gaps.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center hover:scale-105 hover:shadow-xl transition-transform duration-300">
+                        <div class="bg-dominant text-white text-3xl font-bold w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">3</div>
+                        <h3 class="text-xl font-bold text-accent">Identifying Students</h3>
+                        <p class="mt-2 text-gray-600">Enrolling students who require academic assistance.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center hover:scale-105 hover:shadow-xl transition-transform duration-300">
+                        <div class="bg-dominant text-white text-3xl font-bold w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">4</div>
+                        <h3 class="text-xl font-bold text-accent">Daily Tuitions</h3>
+                        <p class="mt-2 text-gray-600">Providing consistent, quality tutoring to improve learning outcomes.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center hover:scale-105 hover:shadow-xl transition-transform duration-300">
+                        <div class="bg-dominant text-white text-3xl font-bold w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">5</div>
+                        <h3 class="text-xl font-bold text-accent">Resource Funding</h3>
+                        <p class="mt-2 text-gray-600">Securing NGO funds for tuition fees and basic stationary.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Internship Journey Section -->
+        <section id="journey" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-accent">The Internship Journey</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">This internship is a structured, multi-stage program. Click on each stage below to explore what you'll learn and how you'll contribute.</p>
+                </div>
+                <div class="flex flex-col lg:flex-row gap-10">
+                    <!-- Timeline Navigation -->
+                    <div id="timeline-nav" class="w-full lg:w-1/3 flex flex-col space-y-3">
+                        <!-- JS populates this -->
+                    </div>
+                    <!-- Details Pane -->
+                    <div class="w-full lg:w-2/3">
+                        <div id="timeline-details" class="bg-white p-8 rounded-xl shadow-xl sticky top-28 min-h-[300px]">
+                            <!-- JS populates this -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-accent text-white mt-20">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <h3 class="text-3xl font-bold">Become a Part of the Change</h3>
+            <p class="mt-2 text-white/80">Join the Ignite Internship and help shape a better future for Mumbai's youth.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const journeyData = [
+                {
+                    id: 'intro',
+                    title: 'Introduction to Yuva Bharat',
+                    duration: '2 Hours',
+                    description: 'The journey begins with a comprehensive orientation. You will learn about the history, mission, and vision of Yuva Bharat, and understand the crucial role you will play as an intern.',
+                    image_placeholders: 2
+                },
+                {
+                    id: 'prakalpas',
+                    title: 'Visit to Prakalpas',
+                    duration: '5 Hours',
+                    description: 'Gain invaluable field experience by visiting our partner organizations. These visits provide direct insight into community needs and social work in action. Sites include:',
+                    subpoints: [
+                        'Shiv Kalyan Kendra (Patient Care Centre)',
+                        'Nana Palkar Smriti Samiti (Patient Care Centre)',
+                        'Vatsalya Foundation (Orphanage adoption Centre)'
+                    ],
+                    image_placeholders: 0
+                },
+                {
+                    id: 'cpr_bls',
+                    title: 'CPR and BLS Training',
+                    duration: 'Full Session',
+                    description: 'Empower yourself with critical life-saving skills. This hands-on session provides certified training in Cardiopulmonary Resuscitation (CPR) and Basic Life Support (BLS), preparing you to act confidently in an emergency.',
+                    image_placeholders: 3
+                },
+                {
+                    id: 'prashikshan',
+                    title: 'Abhyasika Prashikshan',
+                    duration: '4 Hours',
+                    description: 'This is the core training for our educational initiative. You will learn effective teaching methods, classroom management for community settings, and how to mentor and inspire young students in the Abhyasika centers.',
+                    image_placeholders: 1
+                },
+                {
+                    id: 'volunteering',
+                    title: 'Abhyasika Volunteering',
+                    duration: '14 Hours',
+                    description: 'Apply your training by volunteering directly at our Abhyasika centers. This is where you will make a tangible impact, providing tutoring, mentorship, and support to students.',
+                    image_placeholders: 3
+                },
+                {
+                    id: 'certification',
+                    title: 'Certificate Distribution Program',
+                    duration: 'Concluding Ceremony',
+                    description: 'We conclude the internship with a formal ceremony to celebrate your contributions and hard work. You will be awarded a certificate of completion and welcomed into the Yuva Bharat alumni network.',
+                    image_placeholders: 1
+                }
+            ];
+
+            const navContainer = document.getElementById('timeline-nav');
+            const detailsContainer = document.getElementById('timeline-details');
+
+            function updateDetails(item) {
+                let subpointsHTML = '';
+                if (item.subpoints && item.subpoints.length > 0) {
+                    subpointsHTML = '<ul class="mt-4 list-disc list-inside text-gray-600 space-y-1">';
+                    item.subpoints.forEach(point => {
+                        subpointsHTML += `<li>${point}</li>`;
+                    });
+                    subpointsHTML += '</ul>';
+                }
+
+                let imagesHTML = '';
+                if (item.image_placeholders > 0) {
+                    imagesHTML = `<div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">`;
+                    for (let i = 0; i < item.image_placeholders; i++) {
+                        imagesHTML += `<div class="bg-accent/20 h-24 rounded-lg flex items-center justify-center text-accent/60 text-sm">Photograph ${i+1}</div>`;
+                    }
+                    imagesHTML += `</div>`;
+                }
+
+                detailsContainer.innerHTML = `
+                    <div class="fade-in">
+                        <span class="bg-dominant text-white text-xs font-bold px-3 py-1 rounded-full uppercase">${item.duration}</span>
+                        <h3 class="text-3xl font-bold text-accent mt-4 mb-3">${item.title}</h3>
+                        <p class="text-gray-600 leading-relaxed">${item.description}</p>
+                        ${subpointsHTML}
+                        ${imagesHTML}
+                    </div>
+                `;
+            }
+
+            journeyData.forEach(item => {
+                const navItem = document.createElement('button');
+                navItem.className = 'timeline-item w-full text-left p-4 rounded-lg bg-white shadow-md hover:bg-dominant hover:text-white transition-all duration-300';
+                navItem.dataset.id = item.id;
+                navItem.innerHTML = `<h3 class="text-xl font-bold">${item.title}</h3>`;
+                
+                navContainer.appendChild(navItem);
+
+                navItem.addEventListener('click', () => {
+                    document.querySelectorAll('.timeline-item').forEach(el => el.classList.remove('active'));
+                    navItem.classList.add('active');
+                    updateDetails(item);
+                });
+            });
+
+            // Activate the first item on load
+            if (navContainer.firstChild) {
+                navContainer.firstChild.click();
+            }
+        });
+    </script>
+
+</body>
+</html>
